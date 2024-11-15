@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg-dark: #0a0a0b;
+  --bg-darker: #050506;
+  --bg-light: rgba(16, 16, 18, 0.7);
+  --bg-lighter: rgba(20, 20, 22, 0.7);
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --accent-color: #e2d5bc;
+}
+
+body {
+  background: var(--bg-darker);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-lighter);
+  border-radius: 3px;
+}
+
+/* Glass effect */
+.glass {
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+              0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+/* Menu button styles */
+.menu-button {
+  background: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.menu-button:hover {
+  background: var(--bg-lighter);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Input styles */
+.input-outlined {
+  background: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.input-outlined:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(226, 213, 188, 0.1);
+}
+
+/* Control button styles */
+.control-button {
+  background: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  transition: all 0.15s ease;
+}
+
+.control-button:hover {
+  background: var(--bg-lighter);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Accent color overrides */
+.accent-text {
+  color: var(--accent-color);
+}
+
+.peer-checked\:bg-accent:checked {
+  background-color: var(--accent-color);
+}
+
+/* Progress bar */
+.progress-bar {
+  background: var(--bg-lighter);
+}
+
+.progress-bar-fill {
+  background: var(--accent-color);
+}
+
+/* Range input styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  background: var(--bg-dark);
+  border-radius: 4px;
+  height: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  cursor: pointer;
+  border: none;
+}
+
+/* Collapsible sections */
+.collapsible-header {
+  cursor: pointer;
+  user-select: none;
+}
+
+.collapsible-content {
+  transition: all 0.3s ease;
+}
+
+.collapsible-content.collapsed {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+/* Sequence container */
+.sequence-container {
+  border: 1px dashed var(--border-color);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+}
